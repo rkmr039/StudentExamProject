@@ -65,19 +65,4 @@ public class StudentDAOImpl implements StudentDAO {
 		return (Student) sessionFactory.getCurrentSession().get(
 				Student.class, id);
 	}
-	
-	@Override
-	public double getAvgMarks(int sid) {
-		// select avg(mark) from exam where sid = sid;
-		logger.debug(new Date() +"  : "+ this.getClass() + " Method name : getAvgMarks("+ sid+") sid  " + sid);
-		Criteria cr =  sessionFactory.getCurrentSession().createCriteria(Exam.class);
-		Projection p = Projections.avg("mark");
-		cr.setProjection(p);
-		Criterion crId = Restrictions.eq("sid", sid);
-		cr.add(crId);
-		double avgMarks = (double)cr.uniqueResult();
-		logger.debug(new Date() +"  : "+ this.getClass() + " Method name : getAvgMarks("+ sid+") finalScore is  " + avgMarks);
-		return avgMarks;
-	}
-
 }

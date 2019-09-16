@@ -62,11 +62,4 @@ public class StudentServiceImpl implements StudentService {
 		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : getStudentById("+ id +")");	
 		return studentDao.getStudentById(id);
 	}
-
-	@Override
-	public double getAvgMarks(int sid) {
-		return studentDao.getAvgMarks(sid);
-	}
-
-
 }

@@ -11,6 +11,5 @@ public interface StudentDAO {
 	public Student updateStudent(Student student);
 	public Student getStudent(int rollNum);
 	public Student getStudentById(int id);
-	double getAvgMarks(int sid);
 	
 }

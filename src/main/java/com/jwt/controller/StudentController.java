@@ -66,9 +66,6 @@ public class StudentController {
 			logger.debug(new Date() +"  : "+ this.getClass() + "Method name : addStudent()" + " new student created...");
 		}else {
 			logger.debug(new Date() +" Class : "+ this.getClass() + "Method name : updateStudent()" + " updating old student...");
-			// System.out.println("==============AVGMARKS=============== : " + studentService.getAvgMarks(student.getId()));
-			student.setFinalScore(studentService.getAvgMarks(student.getId()));
-			logger.debug(new Date() +" Class : "+ this.getClass() + "Method name : saveStudent()" + " avemarks" + studentService.getAvgMarks(student.getId()));
 			studentService.updateStudent(student);
 		}
 		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : newStudent()" + " redirecting to home ...");

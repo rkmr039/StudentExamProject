@@ -12,6 +12,5 @@ public interface StudentService {
 	public Student getStudent(int rollNum);
 	public Student updateStudent(Student student);
 	public Student getStudentById(int id);
-	double getAvgMarks(int sid);
 
 }

@@ -7,16 +7,10 @@ import com.jwt.model.Student;
 public interface ExamDAO {
 
 	public void addExam(Exam exam);
-
 	public List<Exam> getAllExams();
-	
-	
-
 	public void deleteExam(int eid, int sid);
-
 	public Exam getExamById(int eid);
 	public Exam updateExam(Exam exam);
-
 	public List<Exam> getExamsBySid(int sid);
 	public double getAvgMarks(int sid);
 	public Student getStudentById(int id);
