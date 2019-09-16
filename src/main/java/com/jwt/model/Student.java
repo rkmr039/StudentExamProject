@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "Student")
@@ -29,7 +28,7 @@ public class Student implements Serializable {
 		this.id = id;
 	}
 	
-	@NotNull
+
 	private int rollNum;
 	private String sname;
 	private String gender;

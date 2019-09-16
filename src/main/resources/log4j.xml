@@ -16,10 +16,14 @@
        </layout>
     </appender>
  
+ <logger name="com.jwt.controller">
+ 	<level value="DEBUG"/>
+ 	<appender-ref ref="STDOUT" />
+ 	<appender-ref ref="FILEOUT" />
+ </logger>
     <root>
-        <priority value="INFO"/>
+        <level value="INFO"/>
         <appender-ref ref="STDOUT" />
-        <appender-ref ref="FILEOUT" />
     </root>
      
 </log4j:configuration>

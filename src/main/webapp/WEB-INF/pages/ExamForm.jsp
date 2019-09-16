@@ -21,10 +21,7 @@
                 <td>Mark</td>
                 <td><form:input path="mark" /></td>
             </tr>
-            <tr>
-                <td>Student ID:</td>
-                <td><form:input path="sid" /></td>
-            </tr>
+            <form:hidden path="sid" />
             <tr>
                 <td colspan="2" align="center"><input type="submit" value="Save"></td>
             </tr>

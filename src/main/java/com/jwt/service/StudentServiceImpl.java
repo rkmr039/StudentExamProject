@@ -46,7 +46,10 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	public Student updateStudent(Student student) {
-		return studentDao.updateStudent(student);
+		student =  studentDao.updateStudent(student);
+		logger.debug(new Date() +"  : "+ this.getClass() + "updating student================================");
+		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : updateStudent("+ student.getId() +")");
+		return student;
 	}
 
 	public void setStudentDao(StudentDAO studentDao) {
@@ -55,15 +58,15 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public Student getStudentById(int id) {
-		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : getStudentById("+ id +")");
+		
+		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : getStudentById("+ id +")");	
 		return studentDao.getStudentById(id);
 	}
-	
+
 	@Override
-	public void updateFinalScore(int sid, double finalScore) {
-		Student student = studentDao.getStudentById(sid);
-		student.setFinalScore(finalScore);
-		updateStudent(student);
+	public double getAvgMarks(int sid) {
+		return studentDao.getAvgMarks(sid);
 	}
+
 
 }

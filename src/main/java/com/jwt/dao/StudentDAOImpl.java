@@ -3,12 +3,18 @@ package com.jwt.dao;
 import java.util.Date;
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Projection;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.jwt.controller.ExamController;
+import com.jwt.model.Exam;
 import com.jwt.model.Student;
 
 @Repository
@@ -21,7 +27,7 @@ public class StudentDAOImpl implements StudentDAO {
 			.getLogger(ExamController.class);
 
 	public void addStudent(Student Student) {
-		sessionFactory.getCurrentSession().saveOrUpdate(Student);
+		sessionFactory.getCurrentSession().save(Student);
 
 	}
 
@@ -59,11 +65,19 @@ public class StudentDAOImpl implements StudentDAO {
 		return (Student) sessionFactory.getCurrentSession().get(
 				Student.class, id);
 	}
-
-	/*@Override
-	public void updateFinalScore(int id, double finalScore) {
-		
-		
-	}*/
+	
+	@Override
+	public double getAvgMarks(int sid) {
+		// select avg(mark) from exam where sid = sid;
+		logger.debug(new Date() +"  : "+ this.getClass() + " Method name : getAvgMarks("+ sid+") sid  " + sid);
+		Criteria cr =  sessionFactory.getCurrentSession().createCriteria(Exam.class);
+		Projection p = Projections.avg("mark");
+		cr.setProjection(p);
+		Criterion crId = Restrictions.eq("sid", sid);
+		cr.add(crId);
+		double avgMarks = (double)cr.uniqueResult();
+		logger.debug(new Date() +"  : "+ this.getClass() + " Method name : getAvgMarks("+ sid+") finalScore is  " + avgMarks);
+		return avgMarks;
+	}
 
 }

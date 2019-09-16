@@ -38,7 +38,7 @@
 					<td>${student.grade}</td>
 					<td><a href="editStudent?id=${student.id}">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp; 
 					    <a href="deleteStudent?id=${student.id}">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="exam/showExam?sid=${student.id}">Marks</a></td> 
+						<a href="exam/showExam?sid=${student.id}&sname=${student.sname}">Marks</a></td> 
 				</tr>
 			</c:forEach>
 		</table>

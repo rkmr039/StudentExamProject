@@ -33,8 +33,7 @@ public class ExamDAOImpl implements ExamDAO {
 			.getLogger(ExamController.class);
 
 	public void addExam(Exam exam) {
-		sessionFactory.getCurrentSession().saveOrUpdate(exam);
-		// updateStudentFinalScore(exam.getSid());
+		sessionFactory.getCurrentSession().save(exam);
 	}
 
 	@SuppressWarnings("unchecked")

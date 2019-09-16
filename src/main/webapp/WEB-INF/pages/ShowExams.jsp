@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div align="center">
-		<h1>Exam List</h1>
+		<h1>Exam List for ${sname}</h1>
 		
 		<table border="1">
 			<tr>
@@ -26,7 +26,7 @@
 					<td>${exam.subject}</td>
 					<td>${exam.mark}</td>
 					<td><a href="editExam?eid=${exam.eid}">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="deleteExam?eid=${exam.eid}">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="deleteExam?eid=${exam.eid}&sid=${exam.sid}">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;
 					</td>
 
 				</tr>

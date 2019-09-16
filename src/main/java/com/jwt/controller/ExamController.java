@@ -39,9 +39,10 @@ public class ExamController {
 		logger.debug(new Date() +"  "+ this.getClass() + " Method name : listExam()" + " entering into method...");
 		logger.debug(new Date() +"  "+ this.getClass() + " Method name : listExam()" + " calling exam service...");
 		List<Exam> examList = examService.getExamsBySid(sid);
-		for (Exam exam : examList) {
+		model.addObject("sname",request.getParameter("sname"));
+		/*for (Exam exam : examList) {
 			System.out.println(exam.getEid());
-		}
+		}*/
 		logger.debug(new Date() +"  "+ this.getClass() + " Method name : listExam()" + " getAllExam() successfuly executed ...no of exam received " +  examList.size());
 		model.addObject("examList", examList);
 		model.addObject("sid",Integer.parseInt(request.getParameter("sid")));
@@ -73,7 +74,7 @@ public class ExamController {
 			examService.updateExam(exam);
 		}
 		
-		logger.debug(new Date() +" Class : "+ this.getClass() + " Method name : newExam()" + " redirecting to home ...");
+		logger.debug(new Date() +" Class : "+ this.getClass() + " Method name : saveExam()" + " redirecting to home ...");
 		return new ModelAndView("redirect:/");
 	}
 

@@ -45,13 +45,13 @@
             </tr>
             <%-- <tr>
                 <td>Final Score:</td>
-                <td><form:input path="finalScore" /></td>
+                <td></td>
             </tr> --%>
              <tr>
                 <td>DateOfJoin:</td>
                 <td><form:input path="dateOfJoin" type="date" /></td>
             </tr>
-            
+            <form:hidden path="finalScore" />
             <tr>
                 <td colspan="2" align="center"><input type="submit" value="Save"></td>
             </tr>
