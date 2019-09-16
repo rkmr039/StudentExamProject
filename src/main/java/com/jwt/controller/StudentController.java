@@ -61,25 +61,25 @@ public class StudentController {
 		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : saveStudent()" + " entering into method............");
 		if(student.getFinalScore() == 0.0){ 
 			student.setFinalScore(0.0);
-			logger.debug(new Date() +"  : "+ this.getClass() + "Method name : addStudent()" + " creating new student...");
+			logger.debug(new Date() +"  : "+ this.getClass() + "Method name : addStudent()" + " creating new student");
 			studentService.addStudent(student);
-			logger.debug(new Date() +"  : "+ this.getClass() + "Method name : addStudent()" + " new student created...");
+			logger.debug(new Date() +"  : "+ this.getClass() + "Method name : addStudent()" + " new student created");
 		}else {
-			logger.debug(new Date() +" Class : "+ this.getClass() + "Method name : updateStudent()" + " updating old student...");
+			logger.debug(new Date() +" Class : "+ this.getClass() + "Method name : updateStudent()" + " updating old student");
 			studentService.updateStudent(student);
 		}
-		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : newStudent()" + " redirecting to home ...");
+		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : newStudent()" + " redirecting to home ");
 		return new ModelAndView("redirect:/");
 	}
 
 	@RequestMapping(value = "/deleteStudent", method = RequestMethod.GET)
 	public ModelAndView deleteStudent(HttpServletRequest request) {
 		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : deleteStudent()" + " entering into method.............");
-		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : newStudent()" + " fetching student id from request ...");
+		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : newStudent()" + " fetching student id from request ");
 		int studentId = Integer.parseInt(request.getParameter("id"));
-		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : newStudent()" + " deleting student ..."+ request.getParameter("id"));
+		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : newStudent()" + " deleting student : "+ request.getParameter("id"));
 		studentService.deleteStudent(studentId);
-		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : newStudent()" + " redirecting to home ...");
+		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : newStudent()" + " redirecting to home ");
 		return new ModelAndView("redirect:/");
 	}
 
@@ -87,8 +87,9 @@ public class StudentController {
 	public ModelAndView editStudent(HttpServletRequest request) {
 		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : editStudent()" + " entering into method.............");
 		int studentId = Integer.parseInt(request.getParameter("id"));
+		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : editStudent()" + " getting student");
 		Student student = studentService.getStudent(studentId);
-		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : editStudent()" + " redirecting to StudentForm.............");
+		logger.debug(new Date() +"  : "+ this.getClass() + "Method name : editStudent()" + " redirecting to StudentForm");
 		ModelAndView model = new ModelAndView("StudentForm");
 		model.addObject("student", student);
 

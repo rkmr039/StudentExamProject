@@ -16,15 +16,15 @@
             <form:hidden path="id"/>
              <tr>
                 <td>RollNo:</td>
-                <td><form:input path="rollNum" /></td>
+                <td><form:input path="rollNum" required="required"/></td>
             </tr>
             <tr>
                 <td>Name:</td>
-                <td><form:input path="sname" /></td>
+                <td><form:input path="sname" required="required"/></td>
             </tr>
             <tr>
                 <td>Age:</td>
-                <td><form:input path="age" /></td>
+                <td><form:input path="age" required="required"/></td>
             </tr>
             <tr>
                 <td>Gender:</td>
@@ -34,7 +34,7 @@
             <tr>
                 <td>Country:</td>
                 <td>
-                	<form:select path="country" >
+                	<form:select path="country" required="required" >
                 		<form:option value="NONE">Please Select Any One</form:option>
                 		<form:option value="IN">India</form:option>
                 		<form:option value="US">USA</form:option>
@@ -49,7 +49,7 @@
             </tr> --%>
              <tr>
                 <td>DateOfJoin:</td>
-                <td><form:input path="dateOfJoin" type="date" /></td>
+                <td><form:input path="dateOfJoin" type="date" required="required"/></td>
             </tr>
             <form:hidden path="finalScore" />
             <tr>

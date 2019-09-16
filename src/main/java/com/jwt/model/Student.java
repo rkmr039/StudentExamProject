@@ -28,7 +28,7 @@ public class Student implements Serializable {
 		this.id = id;
 	}
 	
-
+	  
 	private int rollNum;
 	private String sname;
 	private String gender;

@@ -15,11 +15,11 @@
 				 <form:hidden path="eid"/>
              <tr>
                 <td>Subject</td>
-                <td><form:input path="subject" /></td>
+                <td><form:input path="subject" required="required"/></td>
             </tr>
             <tr>
                 <td>Mark</td>
-                <td><form:input path="mark" /></td>
+                <td><form:input path="mark" required="required"/></td>
             </tr>
             <form:hidden path="sid" />
             <tr>
